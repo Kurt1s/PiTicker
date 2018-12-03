@@ -1,9 +1,14 @@
 .text{
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    font-size: 1em;
+    font-size: 10vw;
 }
 
 #window{
     background-color: yellow;
     text-align: center;
+    position: fixed;
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
 }
