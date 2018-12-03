@@ -1,0 +1,9 @@
+.text{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 1em;
+}
+
+#window{
+    background-color: yellow;
+    text-align: center;
+}
