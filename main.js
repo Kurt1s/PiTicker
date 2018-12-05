@@ -71,6 +71,11 @@ document.addEventListener("DOMContentLoaded", function (event) {
         addListeners();
         var info = fetch('btc');
         update(info[0], info[1], info[2]);
+       
+        setInterval(() => {
+            const coinInfo = fetch($('#coin').text());
+            update(coinInfo[0], coinInfo[1], coinInfo[2]);
+        }, 5000);
     }
 
 
