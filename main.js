@@ -23,18 +23,38 @@ document.addEventListener("DOMContentLoaded", function (event) {
     function addListeners() {
         var bar = $('#bar');
         var buttons = bar.children();
-        // console.log(buttons)
-        for (var i = 0; i < 3; i++) {
-            var button = buttons.eq(i);
-            console.log(button)
-            var coin = button.text();
-            button.click(function(){
-                console.log(coin, "COIN")
-                var info = fetch(coin);
-                update(info[0], info[1], info[2])
-            });
-        }
+        
+        buttons.eq(0).click(function(){
+            var info = fetch(buttons.eq(0).text());
+            update(info[0], info[1], info[2]);
+        })
+        
+        buttons.eq(1).click(function(){
+            var info = fetch(buttons.eq(1).text());
+            update(info[0], info[1], info[2]);
+        })
+
+        buttons.eq(2).click(function(){
+            var info = fetch(buttons.eq(2).text());
+            update(info[0], info[1], info[2]);
+        })
     }
+    // WHY CANT I ADD LISTENERS WITH A FOR LOOP?
+    // function addListeners() {
+    //     var bar = $('#bar');
+    //     var buttons = bar.children();
+    //     // console.log(buttons)
+    //     for (var i = 0; i < 3; i++) {
+    //         var button = buttons.eq(i);
+    //         console.log(button)
+    //         var coin = button.text();
+    //         button.click(function(){
+    //             console.log(coin, "COIN")
+    //             var info = fetch(button.text());
+    //             update(info[0], info[1], info[2])
+    //         });
+    //     }
+    // }
 
     function update(price, coin, currency) {
         //update text
