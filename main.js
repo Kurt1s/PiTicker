@@ -23,22 +23,24 @@ document.addEventListener("DOMContentLoaded", function (event) {
     function addListeners() {
         var bar = $('#bar');
         var buttons = bar.children();
+		var price;
         
         buttons.eq(0).click(function(){
-            var info = fetch(buttons.eq(0).text() + "-USD");
+            price = fetch(buttons.eq(0).text() + "-USD");
             update(info[0], info[1], info[2]);
         })
         
         buttons.eq(1).click(function(){
-            var info = fetch(buttons.eq(1).text() + "-USD");
+            price = fetch(buttons.eq(1).text());
             update(info[0], info[1], info[2]);
         })
 
         buttons.eq(2).click(function(){
-            var info = fetch(buttons.eq(2).text() + "-USD");
+            price = fetch(buttons.eq(2).text());
             update(info[0], info[1], info[2]);
         })
     }
+	
     // WHY CANT I ADD LISTENERS WITH A FOR LOOP?
     // function addListeners() {
     //     var bar = $('#bar');
@@ -77,3 +79,6 @@ document.addEventListener("DOMContentLoaded", function (event) {
             update(coinInfo[0], coinInfo[1], coinInfo[2]);
         }, 5000);
     }
+
+
+});
