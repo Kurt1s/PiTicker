@@ -15,6 +15,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
         var requestJson = JSON.parse(strResponse);
         var data = requestJson['data']
         var price = data['amount']
+		console.log(price);
         var coin = data['base']
         var currency = data['currency']
         return [price, coin, currency];
@@ -23,24 +24,22 @@ document.addEventListener("DOMContentLoaded", function (event) {
     function addListeners() {
         var bar = $('#bar');
         var buttons = bar.children();
-		var price;
         
         buttons.eq(0).click(function(){
-            price = fetch(buttons.eq(0).text() + "-USD");
+            var info = fetch(buttons.eq(0).text() + "-USD");
             update(info[0], info[1], info[2]);
         })
         
         buttons.eq(1).click(function(){
-            price = fetch(buttons.eq(1).text());
+            var info = fetch(buttons.eq(1).text());
             update(info[0], info[1], info[2]);
         })
-
+	
         buttons.eq(2).click(function(){
-            price = fetch(buttons.eq(2).text());
+            var info = fetch(buttons.eq(2).text());
             update(info[0], info[1], info[2]);
         })
     }
-	
     // WHY CANT I ADD LISTENERS WITH A FOR LOOP?
     // function addListeners() {
     //     var bar = $('#bar');
@@ -82,3 +81,17 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
 
 });
+// function main() {
+//     var bar = $('#bar');
+//     var buttons = bar.children();
+//     // console.log(buttons)
+//     for(var i = 0; i < 3; i++){
+//         var button = buttons.eq(i);
+//         var coin = button.text();
+//         button.click(function(coin){
+//             update(coin)}
+//             );
+//     }
+//     setInterval(function(){update(coin)}, 1000 * 1.5)
+// }
+// main();
