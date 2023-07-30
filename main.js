@@ -25,17 +25,17 @@ document.addEventListener("DOMContentLoaded", function (event) {
         var buttons = bar.children();
         
         buttons.eq(0).click(function(){
-            var info = fetch(buttons.eq(0).text());
+            var info = fetch(buttons.eq(0).text() + "-USD");
             update(info[0], info[1], info[2]);
         })
         
         buttons.eq(1).click(function(){
-            var info = fetch(buttons.eq(1).text());
+            var info = fetch(buttons.eq(1).text() + "-USD");
             update(info[0], info[1], info[2]);
         })
 
         buttons.eq(2).click(function(){
-            var info = fetch(buttons.eq(2).text());
+            var info = fetch(buttons.eq(2).text() + "-USD");
             update(info[0], info[1], info[2]);
         })
     }
