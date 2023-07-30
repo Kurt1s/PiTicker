@@ -77,20 +77,3 @@ document.addEventListener("DOMContentLoaded", function (event) {
             update(coinInfo[0], coinInfo[1], coinInfo[2]);
         }, 5000);
     }
-
-
-});
-// function main() {
-//     var bar = $('#bar');
-//     var buttons = bar.children();
-//     // console.log(buttons)
-//     for(var i = 0; i < 3; i++){
-//         var button = buttons.eq(i);
-//         var coin = button.text();
-//         button.click(function(coin){
-//             update(coin)}
-//             );
-//     }
-//     setInterval(function(){update(coin)}, 1000 * 1.5)
-// }
-// main();
